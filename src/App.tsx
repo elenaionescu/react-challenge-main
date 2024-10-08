@@ -1,54 +1,23 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from "react";
+import React from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import CountrySearch from './components/CountrySearch';
+import ErrorBoundary from './components/ErrorBoundary';
+import './App.css';
 
-function App() {
-  const [results, setResults] = useState<any>([]);
-  const [search, setSearch] = useState("");
+const queryClient = new QueryClient();
 
-  return (
-    <>
-      <h2>Country search</h2>
-      <input
-        type="text"
-        placeholder="Search..."
-        onChange={(event) => {
-          setSearch(event.target.value);
-        }}
-        style={{
-          padding: "8px",
-          border: "1px solid black",
-        }}
-      />
-      <div
-        onClick={() => {
-          fetch(`https://restcountries.com/v3.1/name/${search}`)
-            .then((res) => res.json())
-            .then((data) => setResults(data));
-        }}
-        style={{
-          display: "inline-block",
-          padding: "8px",
-          margin: "8px",
-          border: "1px solid black",
-          cursor: "pointer",
-        }}
-      >
-        Search
-      </div>
-
-      <div>
-        {results.map((x: any) => {
-          return (
-            <div>
-              {x.flag} {x.name.official}
-              <br />
-              Capital: {x.capital}
-            </div>
-          );
-        })}
-      </div>
-    </>
-  );
-}
+const App: React.FC = () => {
+    return (
+        <ErrorBoundary>
+            <QueryClientProvider client={queryClient}>
+                <div className="container mx-auto p-4">
+                    <h1 className="text-3xl font-bold mb-4">Country Search</h1>
+                    <CountrySearch />
+                </div>
+            </QueryClientProvider>
+        </ErrorBoundary>
+    );
+};
 
 export default App;
