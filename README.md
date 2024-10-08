@@ -58,6 +58,10 @@ Additional improvements:
 ```sh
 npm install react-query @types/react-query tailwindcss @types/react @types/react-dom
 npx tailwindcss init -p
+npm install --save-dev @types/react @types/react-dom @types/jest 
+npm install --save-dev jest ts-jest @testing-library/react @testing-library/jest-dom @testing-library/user-event
+npm install --save-dev @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript
+npm install --save-dev identity-obj-proxy
 ```
 - I used Jest as the test runner and React Testing Library for rendering and interacting with the components
 
