@@ -37,3 +37,33 @@ npm install
 ```sh
 npm run dev
 ```
+
+### My Notes
+
+This refactored version of the application addresses these:
+
+- Accessibility: Added aria labels to input and button elements.
+- Robust error handling: Implemented error handling in the API call and used an ErrorBoundary component.
+- Testing: The component structure makes it easier to write unit tests for each component.
+- Responsiveness: Used Tailwind CSS classes for a responsive design.
+- Ease of updating the data source: API calls are isolated in a separate utility file.
+- Appearance: Used Tailwind CSS for a basic, user-friendly UI.
+Additional improvements:
+
+- Used TypeScript for better type safety
+- Implemented React Query for efficient data fetching and caching
+- Split the application into smaller, reusable components
+- Used modern React practices like functional components and hooks
+
+```sh
+npm install react-query @types/react-query tailwindcss @types/react @types/react-dom
+npx tailwindcss init -p
+```
+- I used Jest as the test runner and React Testing Library for rendering and interacting with the components
+
+Some additional testing considerations for the future:
+
+- Integration tests: Test how components work together in larger parts of the application
+- Accessibility tests: Using tools like jest-axe to test for accessibility issues
+- Snapshot tests: Using Jest's snapshot testing to catch unexpected changes in component rendering
+- Performance tests: Adding performance tests for critical parts of the application
