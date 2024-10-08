@@ -42,12 +42,12 @@ npm run dev
 
 This refactored version of the application addresses these:
 
-- Accessibility: Added aria labels to input and button elements.
-- Robust error handling: Implemented error handling in the API call and used an ErrorBoundary component.
-- Testing: The component structure makes it easier to write unit tests for each component.
-- Responsiveness: Used Tailwind CSS classes for a responsive design.
-- Ease of updating the data source: API calls are isolated in a separate utility file.
-- Appearance: Used Tailwind CSS for a basic, user-friendly UI.
+- Accessibility: Added aria labels to input and button elements
+- Robust error handling: Implemented error handling in the API call and used an ErrorBoundary component
+- Testing: The component structure makes it easier to write unit tests for each component
+- Responsiveness: Used Tailwind CSS classes for a responsive design
+- Ease of updating the data source: API calls are isolated in a separate utility file
+- Appearance: Used Tailwind CSS for a basic, user-friendly UI
 Additional improvements:
 
 - Used TypeScript for better type safety
